@@ -1,0 +1,175 @@
+{
+  "schema": 1,
+  "id": "demo-sloppy",
+  "label": "Sloppy demo",
+  "source": "scripted",
+  "model": "scripted:sloppy",
+  "created": "2026-10-09T00:00:00+00:00",
+  "elapsed_s": null,
+  "options": {},
+  "log": {
+    "name": "auth_50.log",
+    "sha256": "06af8e79dffc6253de866960760e86fa36f449b3ee1b0a756ad91cc225ddb9be",
+    "lines": 50
+  },
+  "prompt_sha256": "dbb8ec7a496b0401e714d55518fd758be01042aa76a640754bab757b590bb984",
+  "parse_error": null,
+  "claims": [
+    {
+      "id": "C1",
+      "kind": "headline",
+      "severity": "malicious",
+      "text": "Several brute-force attacks hit the server and at least one account was compromised.",
+      "lines": [
+        17,
+        18,
+        31
+      ]
+    },
+    {
+      "id": "C2",
+      "kind": "finding",
+      "severity": "malicious",
+      "text": "`203.0.113.45` made 12 failed password attempts against `root`, `admin`, `test` and `oracle`.",
+      "lines": [
+        18,
+        20,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28
+      ]
+    },
+    {
+      "id": "C3",
+      "kind": "finding",
+      "severity": "malicious",
+      "text": "`203.0.113.45` tried the usernames `admin`, `test` and `oracle` and then `root` at 13:41, all within about half a minute.",
+      "lines": [
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ]
+    },
+    {
+      "id": "C4",
+      "kind": "finding",
+      "severity": "malicious",
+      "text": "`deploy` logged in from `203.0.113.45` at 13:52:11.",
+      "lines": [
+        31,
+        32
+      ]
+    },
+    {
+      "id": "C5",
+      "kind": "finding",
+      "severity": "malicious",
+      "text": "After getting a root shell, `deploy` installed a persistence mechanism.",
+      "lines": [
+        33,
+        34,
+        57
+      ]
+    },
+    {
+      "id": "C6",
+      "kind": "finding",
+      "severity": "malicious",
+      "text": "A new account named `backup` was created and added to the sudo group.",
+      "lines": [
+        35,
+        36
+      ]
+    },
+    {
+      "id": "C7",
+      "kind": "finding",
+      "severity": "suspicious",
+      "text": "`bob` entered a wrong password at 07:31, which looks like credential stuffing.",
+      "lines": [
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "id": "C8",
+      "kind": "finding",
+      "severity": "malicious",
+      "text": "There were no successful logins from `203.0.113.45`; every attempt failed.",
+      "lines": [
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28
+      ]
+    },
+    {
+      "id": "C9",
+      "kind": "finding",
+      "severity": "suspicious",
+      "text": "`198.51.100.77` tried the username `ubuntu` at 11:20.",
+      "lines": [
+        12,
+        13,
+        14
+      ]
+    },
+    {
+      "id": "C10",
+      "kind": "finding",
+      "severity": "info",
+      "text": "`alice` logged in with a public key at 06:58 and ran `apt update` with `sudo`.",
+      "lines": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "C11",
+      "kind": "finding",
+      "severity": "malicious",
+      "text": "`deploy` logged in from `203.0.113.45` after failed attempts.",
+      "lines": [
+        31
+      ]
+    },
+    {
+      "id": "C12",
+      "kind": "action",
+      "severity": "malicious",
+      "text": "Block `203.0.113.45`.",
+      "lines": [
+        31
+      ]
+    },
+    {
+      "id": "C13",
+      "kind": "action",
+      "severity": "suspicious",
+      "text": "Rotate credentials and review sudo access.",
+      "lines": [
+        33,
+        34
+      ]
+    }
+  ],
+  "raw_response": "{\n  \"claims\": [\n    {\n      \"kind\": \"headline\",\n      \"severity\": \"malicious\",\n      \"text\": \"Several brute-force attacks hit the server and at least one account was compromised.\",\n      \"lines\": [\n        17,\n        18,\n        31\n      ]\n    },\n    {\n      \"kind\": \"finding\",\n      \"severity\": \"malicious\",\n      \"text\": \"`203.0.113.45` made 12 failed password attempts against `root`, `admin`, `test` and `oracle`.\",\n      \"lines\": [\n        18,\n        20,\n        22,\n        23,\n        24,\n        25,\n        26,\n        27,\n        28\n      ]\n    },\n    {\n      \"kind\": \"finding\",\n      \"severity\": \"malicious\",\n      \"text\": \"`203.0.113.45` tried the usernames `admin`, `test` and `oracle` and then `root` at 13:41, all within about half a minute.\",\n      \"lines\": [\n        17,\n        18,\n        19,\n        20,\n        21,\n        22,\n        23\n      ]\n    },\n    {\n      \"kind\": \"finding\",\n      \"severity\": \"malicious\",\n      \"text\": \"`deploy` logged in from `203.0.113.45` at 13:52:11.\",\n      \"lines\": [\n        31,\n        32\n      ]\n    },\n    {\n      \"kind\": \"finding\",\n      \"severity\": \"malicious\",\n      \"text\": \"After getting a root shell, `deploy` installed a persistence mechanism.\",\n      \"lines\": [\n        33,\n        34,\n        57\n      ]\n    },\n    {\n      \"kind\": \"finding\",\n      \"severity\": \"malicious\",\n      \"text\": \"A new account named `backup` was created and added to the sudo group.\",\n      \"lines\": [\n        35,\n        36\n      ]\n    },\n    {\n      \"kind\": \"finding\",\n      \"severity\": \"suspicious\",\n      \"text\": \"`bob` entered a wrong password at 07:31, which looks like credential stuffing.\",\n      \"lines\": [\n        8,\n        9,\n        10\n      ]\n    },\n    {\n      \"kind\": \"finding\",\n      \"severity\": \"malicious\",\n      \"text\": \"There were no successful logins from `203.0.113.45`; every attempt failed.\",\n      \"lines\": [\n        17,\n        18,\n        19,\n        20,\n        21,\n        22,\n        23,\n        24,\n        25,\n        26,\n        27,\n        28\n      ]\n    },\n    {\n      \"kind\": \"finding\",\n      \"severity\": \"suspicious\",\n      \"text\": \"`198.51.100.77` tried the username `ubuntu` at 11:20.\",\n      \"lines\": [\n        12,\n        13,\n        14\n      ]\n    },\n    {\n      \"kind\": \"finding\",\n      \"severity\": \"info\",\n      \"text\": \"`alice` logged in with a public key at 06:58 and ran `apt update` with `sudo`.\",\n      \"lines\": [\n        1,\n        2,\n        3\n      ]\n    },\n    {\n      \"kind\": \"finding\",\n      \"severity\": \"malicious\",\n      \"text\": \"`deploy` logged in from `203.0.113.45` after failed attempts.\",\n      \"lines\": [\n        31\n      ]\n    },\n    {\n      \"kind\": \"action\",\n      \"severity\": \"malicious\",\n      \"text\": \"Block `203.0.113.45`.\",\n      \"lines\": [\n        31\n      ]\n    },\n    {\n      \"kind\": \"action\",\n      \"severity\": \"suspicious\",\n      \"text\": \"Rotate credentials and review sudo access.\",\n      \"lines\": [\n        33,\n        34\n      ]\n    }\n  ]\n}"
+}

@@ -1,0 +1,142 @@
+{
+  "schema": 1,
+  "id": "20261011-083227-qwen2.5-7b",
+  "label": "qwen2.5:7b (prompt v2)",
+  "source": "ollama",
+  "model": "qwen2.5:7b",
+  "created": "2026-10-11T08:32:27+00:00",
+  "elapsed_s": 35.9,
+  "options": {
+    "temperature": 0.0,
+    "seed": 7,
+    "num_ctx": 8192
+  },
+  "log": {
+    "name": "auth_50.log",
+    "sha256": "06af8e79dffc6253de866960760e86fa36f449b3ee1b0a756ad91cc225ddb9be",
+    "lines": 50
+  },
+  "prompt_sha256": "b5816919609189736702b0a9fc5724b1a07824a9eb6e2f26b32ecd9dfde08aca",
+  "parse_error": null,
+  "claims": [
+    {
+      "id": "C1",
+      "kind": "headline",
+      "severity": "suspicious",
+      "text": "Multiple failed login attempts and a successful login from `203.0.113.45` using `deploy` and `support`.",
+      "lines": [
+        8,
+        9,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50
+      ]
+    },
+    {
+      "id": "C2",
+      "kind": "finding",
+      "severity": "suspicious",
+      "text": "`203.0.113.45` made 5 failed password attempts against `root` and then successfully logged in as `deploy`.",
+      "lines": [
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34
+      ]
+    },
+    {
+      "id": "C3",
+      "kind": "finding",
+      "severity": "suspicious",
+      "text": "User `support` was created and added to the `sudo` group by `deploy`.",
+      "lines": [
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "id": "C4",
+      "kind": "finding",
+      "severity": "suspicious",
+      "text": "`support` used `sudo` to view the contents of `/etc/shadow`.",
+      "lines": [
+        44,
+        45
+      ]
+    },
+    {
+      "id": "C5",
+      "kind": "action",
+      "severity": "info",
+      "text": "Review the commands executed by `support` and determine if any sensitive information was accessed or modified.",
+      "lines": [
+        44,
+        45
+      ]
+    },
+    {
+      "id": "C6",
+      "kind": "action",
+      "severity": "info",
+      "text": "Check the logs for any further activity by `support` and `deploy` after their initial login.",
+      "lines": [
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47
+      ]
+    }
+  ],
+  "raw_response": "{\n  \"claims\": [\n    {\n      \"kind\": \"headline\",\n      \"severity\": \"suspicious\",\n      \"text\": \"Multiple failed login attempts and a successful login from `203.0.113.45` using `deploy` and `support`.\",\n      \"lines\": [8, 9, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 42, 43, 44, 45, 46, 47, 48, 49, 50]\n    },\n    {\n      \"kind\": \"finding\",\n      \"severity\": \"suspicious\",\n      \"text\": \"`203.0.113.45` made 5 failed password attempts against `root` and then successfully logged in as `deploy`.\",\n      \"lines\": [23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34]\n    },\n    {\n      \"kind\": \"finding\",\n      \"severity\": \"suspicious\",\n      \"text\": \"User `support` was created and added to the `sudo` group by `deploy`.\",\n      \"lines\": [35, 36, 37]\n    },\n    {\n      \"kind\": \"finding\",\n      \"severity\": \"suspicious\",\n      \"text\": \"`support` used `sudo` to view the contents of `/etc/shadow`.\",\n      \"lines\": [44, 45]\n    },\n    {\n      \"kind\": \"action\",\n      \"severity\": \"info\",\n      \"text\": \"Review the commands executed by `support` and determine if any sensitive information was accessed or modified.\",\n      \"lines\": [44, 45]\n    },\n    {\n      \"kind\": \"action\",\n      \"severity\": \"info\",\n      \"text\": \"Check the logs for any further activity by `support` and `deploy` after their initial login.\",\n      \"lines\": [31, 32, 33, 34, 35, 36, 37, 42, 43, 44, 45, 46, 47]\n    }\n  ]\n}",
+  "prompt_version": "v2"
+}

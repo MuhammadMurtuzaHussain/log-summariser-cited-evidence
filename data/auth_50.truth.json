@@ -1,0 +1,153 @@
+{
+  "log": "auth_50.log",
+  "line_count": 50,
+  "note": "A claim finds an event when it is backed by its citation, cites at least one key line and uses at least one of the event's terms. Routine lines are ordinary activity: a claim rated suspicious or malicious that cites only these has over-read the log.",
+  "events": [
+    {
+      "id": "E1",
+      "title": "Slow probe from 198.51.100.23 that never gets in",
+      "severity": "suspicious",
+      "terms": [
+        "198.51.100.23"
+      ],
+      "lines": [
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "key_lines": [
+        13,
+        16
+      ]
+    },
+    {
+      "id": "E2",
+      "title": "Brute force from 203.0.113.45 against admin, test, oracle and root",
+      "severity": "malicious",
+      "terms": [
+        "203.0.113.45"
+      ],
+      "lines": [
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28
+      ],
+      "key_lines": [
+        18,
+        20,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28
+      ]
+    },
+    {
+      "id": "E3",
+      "title": "deploy password guessed and a login accepted",
+      "severity": "malicious",
+      "terms": [
+        "deploy"
+      ],
+      "lines": [
+        29,
+        30,
+        31,
+        32,
+        39,
+        40,
+        41
+      ],
+      "key_lines": [
+        31,
+        32
+      ]
+    },
+    {
+      "id": "E4",
+      "title": "deploy opens a root shell with sudo",
+      "severity": "malicious",
+      "terms": [
+        "sudo",
+        "root"
+      ],
+      "lines": [
+        33,
+        34,
+        38
+      ],
+      "key_lines": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "E5",
+      "title": "New account support created, made a sudoer and given a password",
+      "severity": "malicious",
+      "terms": [
+        "support"
+      ],
+      "lines": [
+        35,
+        36,
+        37
+      ],
+      "key_lines": [
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "id": "E6",
+      "title": "Attacker returns as support and reads /etc/shadow",
+      "severity": "malicious",
+      "terms": [
+        "shadow"
+      ],
+      "lines": [
+        42,
+        43,
+        44,
+        45
+      ],
+      "key_lines": [
+        42,
+        43,
+        44
+      ]
+    }
+  ],
+  "routine_lines": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    46,
+    47,
+    48,
+    49,
+    50
+  ]
+}

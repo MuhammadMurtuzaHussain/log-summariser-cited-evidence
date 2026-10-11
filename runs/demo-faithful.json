@@ -1,0 +1,159 @@
+{
+  "schema": 1,
+  "id": "demo-faithful",
+  "label": "Faithful demo",
+  "source": "scripted",
+  "model": "scripted:faithful",
+  "created": "2026-10-09T00:00:00+00:00",
+  "elapsed_s": null,
+  "options": {},
+  "log": {
+    "name": "auth_50.log",
+    "sha256": "06af8e79dffc6253de866960760e86fa36f449b3ee1b0a756ad91cc225ddb9be",
+    "lines": 50
+  },
+  "prompt_sha256": "dbb8ec7a496b0401e714d55518fd758be01042aa76a640754bab757b590bb984",
+  "parse_error": null,
+  "claims": [
+    {
+      "id": "C1",
+      "kind": "headline",
+      "severity": "malicious",
+      "text": "An external address, `203.0.113.45`, guessed passwords against `root` and three invalid names, got into `deploy` at 13:43:11, opened a root shell, created a sudo account called `support` and later logged in with it.",
+      "lines": [
+        18,
+        20,
+        22,
+        23,
+        24,
+        25,
+        26,
+        31,
+        33,
+        35,
+        36,
+        42
+      ]
+    },
+    {
+      "id": "C2",
+      "kind": "finding",
+      "severity": "malicious",
+      "text": "`203.0.113.45` made 7 failed password attempts between 13:41:11 and 13:41:34: once each against the invalid users `admin`, `test` and `oracle`, then four times against `root`, before `sshd` cut it off for too many failures.",
+      "lines": [
+        18,
+        20,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28
+      ]
+    },
+    {
+      "id": "C3",
+      "kind": "finding",
+      "severity": "malicious",
+      "text": "After 2 failed password attempts as `deploy`, `203.0.113.45` logged in as `deploy` at 13:43:11 with a password.",
+      "lines": [
+        29,
+        30,
+        31,
+        32
+      ]
+    },
+    {
+      "id": "C4",
+      "kind": "finding",
+      "severity": "malicious",
+      "text": "`deploy` ran `sudo` with `/bin/bash` as `root` at 13:44:20, giving the attacker a root shell.",
+      "lines": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "C5",
+      "kind": "finding",
+      "severity": "malicious",
+      "text": "A new account, `support`, was created at 13:44:51, added to the `sudo` group and given a password at 13:45:06.",
+      "lines": [
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "id": "C6",
+      "kind": "finding",
+      "severity": "malicious",
+      "text": "At 14:02:17 `203.0.113.45` logged in as `support` with a password, then used `sudo` to run `/usr/bin/cat /etc/shadow` at 14:02:49.",
+      "lines": [
+        42,
+        43,
+        44,
+        45
+      ]
+    },
+    {
+      "id": "C7",
+      "kind": "finding",
+      "severity": "suspicious",
+      "text": "`198.51.100.23` probed the usernames `ubuntu` and `pi` at 11:20 and 12:47 and never got in; the log shows no successful login from it.",
+      "lines": [
+        12,
+        13,
+        14,
+        15,
+        16
+      ]
+    },
+    {
+      "id": "C8",
+      "kind": "finding",
+      "severity": "info",
+      "text": "Routine activity: `alice` logged in from `10.0.4.21` with a public key at 06:58, and `bob` mistyped his password once at 07:31 before logging in from `10.0.4.35`.",
+      "lines": [
+        1,
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "id": "C9",
+      "kind": "action",
+      "severity": "malicious",
+      "text": "Block `203.0.113.45` at the firewall and review every session it opened.",
+      "lines": [
+        31,
+        42
+      ]
+    },
+    {
+      "id": "C10",
+      "kind": "action",
+      "severity": "malicious",
+      "text": "Disable the `support` account, reset the password for `deploy`, and check both for added SSH keys or scheduled jobs.",
+      "lines": [
+        31,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "id": "C11",
+      "kind": "action",
+      "severity": "suspicious",
+      "text": "Review which accounts may use `sudo`, starting with `deploy`.",
+      "lines": [
+        33,
+        36
+      ]
+    }
+  ],
+  "raw_response": "{\n  \"claims\": [\n    {\n      \"kind\": \"headline\",\n      \"severity\": \"malicious\",\n      \"text\": \"An external address, `203.0.113.45`, guessed passwords against `root` and three invalid names, got into `deploy` at 13:43:11, opened a root shell, created a sudo account called `support` and later logged in with it.\",\n      \"lines\": [\n        18,\n        20,\n        22,\n        23,\n        24,\n        25,\n        26,\n        31,\n        33,\n        35,\n        36,\n        42\n      ]\n    },\n    {\n      \"kind\": \"finding\",\n      \"severity\": \"malicious\",\n      \"text\": \"`203.0.113.45` made 7 failed password attempts between 13:41:11 and 13:41:34: once each against the invalid users `admin`, `test` and `oracle`, then four times against `root`, before `sshd` cut it off for too many failures.\",\n      \"lines\": [\n        18,\n        20,\n        22,\n        23,\n        24,\n        25,\n        26,\n        27,\n        28\n      ]\n    },\n    {\n      \"kind\": \"finding\",\n      \"severity\": \"malicious\",\n      \"text\": \"After 2 failed password attempts as `deploy`, `203.0.113.45` logged in as `deploy` at 13:43:11 with a password.\",\n      \"lines\": [\n        29,\n        30,\n        31,\n        32\n      ]\n    },\n    {\n      \"kind\": \"finding\",\n      \"severity\": \"malicious\",\n      \"text\": \"`deploy` ran `sudo` with `/bin/bash` as `root` at 13:44:20, giving the attacker a root shell.\",\n      \"lines\": [\n        33,\n        34\n      ]\n    },\n    {\n      \"kind\": \"finding\",\n      \"severity\": \"malicious\",\n      \"text\": \"A new account, `support`, was created at 13:44:51, added to the `sudo` group and given a password at 13:45:06.\",\n      \"lines\": [\n        35,\n        36,\n        37\n      ]\n    },\n    {\n      \"kind\": \"finding\",\n      \"severity\": \"malicious\",\n      \"text\": \"At 14:02:17 `203.0.113.45` logged in as `support` with a password, then used `sudo` to run `/usr/bin/cat /etc/shadow` at 14:02:49.\",\n      \"lines\": [\n        42,\n        43,\n        44,\n        45\n      ]\n    },\n    {\n      \"kind\": \"finding\",\n      \"severity\": \"suspicious\",\n      \"text\": \"`198.51.100.23` probed the usernames `ubuntu` and `pi` at 11:20 and 12:47 and never got in; the log shows no successful login from it.\",\n      \"lines\": [\n        12,\n        13,\n        14,\n        15,\n        16\n      ]\n    },\n    {\n      \"kind\": \"finding\",\n      \"severity\": \"info\",\n      \"text\": \"Routine activity: `alice` logged in from `10.0.4.21` with a public key at 06:58, and `bob` mistyped his password once at 07:31 before logging in from `10.0.4.35`.\",\n      \"lines\": [\n        1,\n        2,\n        8,\n        9\n      ]\n    },\n    {\n      \"kind\": \"action\",\n      \"severity\": \"malicious\",\n      \"text\": \"Block `203.0.113.45` at the firewall and review every session it opened.\",\n      \"lines\": [\n        31,\n        42\n      ]\n    },\n    {\n      \"kind\": \"action\",\n      \"severity\": \"malicious\",\n      \"text\": \"Disable the `support` account, reset the password for `deploy`, and check both for added SSH keys or scheduled jobs.\",\n      \"lines\": [\n        31,\n        35,\n        36,\n        37\n      ]\n    },\n    {\n      \"kind\": \"action\",\n      \"severity\": \"suspicious\",\n      \"text\": \"Review which accounts may use `sudo`, starting with `deploy`.\",\n      \"lines\": [\n        33,\n        36\n      ]\n    }\n  ]\n}"
+}

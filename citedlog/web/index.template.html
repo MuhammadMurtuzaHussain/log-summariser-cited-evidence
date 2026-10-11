@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en-IE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cited log summariser</title>
+<meta name="description" content="Checks that every claim in a model-written auth log briefing points at log lines that back it.">
+<style>
+{{CSS}}
+</style>
+</head>
+<body>
+<a class="skip" href="#briefing">Skip to the briefing</a>
+<div class="wrap">
+  <header class="top">
+    <div>
+      <h1>Cited log summariser</h1>
+      <p>A local model briefs an analyst on an auth log. This page checks that each claim points at lines that back it.</p>
+    </div>
+    <button class="btn" id="theme" type="button">Switch theme</button>
+  </header>
+
+  <main>
+    <div class="tabs" id="tabs" role="tablist" aria-label="Runs"></div>
+
+    <section class="hero" aria-labelledby="hero-text">
+      <p class="hero-text" id="hero-text" aria-live="polite">{{HERO}}</p>
+      <div class="runmeta" id="runmeta"></div>
+      <p class="note" id="note" hidden></p>
+      <div class="strip-wrap"><div class="strip" id="strip" role="group" aria-label="Claims in the order the briefing makes them"></div></div>
+      <ul class="legend" id="legend" aria-label="Key"></ul>
+      <p class="scope">Headline and findings are counted. Recommended actions are checked the same way and listed below them.</p>
+    </section>
+
+    <div class="panes">
+      <section id="briefing" aria-labelledby="briefing-h">
+        <h2 id="briefing-h">Briefing</h2>
+        <p class="sub">Select a claim to see the lines it cites and the words that were matched in them.</p>
+        <div id="claims"></div>
+      </section>
+
+      <aside aria-label="The log">
+        <div class="log" id="log">
+          <div class="log-head">
+            <div class="log-name" id="logname"></div>
+            <label class="keytoggle"><input type="checkbox" id="keytoggle"> Show planted events</label>
+          </div>
+          <div id="logbody" tabindex="0" role="region" aria-label="Log lines"></div>
+          <div class="log-foot" id="logfoot" aria-live="polite">Select a line to see which claims cite it.</div>
+        </div>
+      </aside>
+    </div>
+
+    <section class="section" id="eventsec" aria-labelledby="events-h">
+      <h2 id="events-h">Did it find what was planted?</h2>
+      <p class="sub">The log was written with these events. A claim finds one when its citation holds, it cites a key line, and it uses one of the event's words.</p>
+      <div class="tablewrap"><table id="events"></table></div>
+    </section>
+
+    <details id="rules">
+      <summary>What the checker tests, and what it cannot</summary>
+      <div class="tablewrap"><table id="ruletable"></table></div>
+      <p class="sub" style="margin-top:12px">A passing claim has real evidence behind its details. It is not proof that the claim reads that evidence correctly: &ldquo;this is a brute-force attack&rdquo; cites the right lines whether or not the conclusion is sound. Judgement stays with the analyst.</p>
+    </details>
+
+    <details id="tableview">
+      <summary>Table view of every claim</summary>
+      <div class="tablewrap"><table id="claimtable"></table></div>
+    </details>
+
+    <noscript>
+      <section class="section">
+        <h2>Claims in the default run</h2>
+        {{NOSCRIPT_TABLE}}
+      </section>
+    </noscript>
+  </main>
+
+  <footer>
+    This page is one file. It makes no network requests and sends nothing anywhere. Log text and model output are shown as plain text only.
+    Scripted runs are hand-written examples of good and bad briefings, not output from a model.
+  </footer>
+</div>
+<div id="tip" role="tooltip"></div>
+<script type="application/json" id="data">{{DATA}}</script>
+<script>
+{{JS}}
+</script>
+</body>
+</html>

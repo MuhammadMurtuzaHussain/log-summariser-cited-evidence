@@ -1,0 +1,159 @@
+{
+  "schema": 1,
+  "id": "20261009-151525-llama3.2",
+  "label": "llama3.2 (prompt v2)",
+  "source": "ollama",
+  "model": "llama3.2",
+  "created": "2026-10-09T15:15:25+00:00",
+  "elapsed_s": 16.4,
+  "options": {
+    "temperature": 0.0,
+    "seed": 7,
+    "num_ctx": 8192
+  },
+  "log": {
+    "name": "auth_50.log",
+    "sha256": "06af8e79dffc6253de866960760e86fa36f449b3ee1b0a756ad91cc225ddb9be",
+    "lines": 50
+  },
+  "prompt_sha256": "b5816919609189736702b0a9fc5724b1a07824a9eb6e2f26b32ecd9dfde08aca",
+  "parse_error": null,
+  "claims": [
+    {
+      "id": "C1",
+      "kind": "headline",
+      "severity": "info",
+      "text": "Multiple failed login attempts against unknown users, with successful logins for `alice` and `support`, and a new user `support` added to the sudo group.",
+      "lines": [
+        8,
+        9,
+        12,
+        13,
+        15,
+        16,
+        17,
+        18,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        36,
+        37,
+        38,
+        40,
+        43,
+        44,
+        46,
+        47,
+        48,
+        49,
+        50
+      ]
+    },
+    {
+      "id": "C2",
+      "kind": "finding",
+      "severity": "suspicious",
+      "text": "Multiple failed password attempts against unknown users, with successful logins for `alice` and `support`, and a new user `support` added to the sudo group.",
+      "lines": [
+        8,
+        9,
+        12,
+        13,
+        15,
+        16,
+        17,
+        18,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        36,
+        37,
+        38,
+        40,
+        43,
+        44,
+        46,
+        47,
+        48,
+        49,
+        50
+      ]
+    },
+    {
+      "id": "C3",
+      "kind": "finding",
+      "severity": "malicious",
+      "text": "A new user `support` was added to the sudo group without a password, and then used to run the `cat /etc/shadow` command.",
+      "lines": [
+        36,
+        45,
+        44
+      ]
+    },
+    {
+      "id": "C4",
+      "kind": "action",
+      "severity": "info",
+      "text": "Review the `cat /etc/shadow` command run by `support`.",
+      "lines": [
+        44
+      ]
+    },
+    {
+      "id": "C5",
+      "kind": "action",
+      "severity": "info",
+      "text": "Verify that the new user `support` has a valid password.",
+      "lines": [
+        37
+      ]
+    },
+    {
+      "id": "C6",
+      "kind": "action",
+      "severity": "info",
+      "text": "Check the sudo group permissions to ensure that only authorized users can run commands.",
+      "lines": [
+        36,
+        34
+      ]
+    },
+    {
+      "id": "C7",
+      "kind": "action",
+      "severity": "info",
+      "text": "Monitor the system for any further suspicious activity.",
+      "lines": [
+        47,
+        46,
+        48,
+        49,
+        50
+      ]
+    }
+  ],
+  "raw_response": "{\"claims\": [\n{\"kind\": \"headline\", \"severity\": \"info\", \"text\": \"Multiple failed login attempts against unknown users, with successful logins for `alice` and `support`, and a new user `support` added to the sudo group.\", \"lines\": [8, 9, 12, 13, 15, 16, 17, 18, 20, 21, 22, 23, 24, 25, 26, 28, 29, 30, 31, 32, 33, 34, 36, 37, 38, 40, 43, 44, 46, 47, 48, 49, 50]},\n{\"kind\": \"finding\", \"severity\": \"suspicious\", \"text\": \"Multiple failed password attempts against unknown users, with successful logins for `alice` and `support`, and a new user `support` added to the sudo group.\", \"lines\": [8, 9, 12, 13, 15, 16, 17, 18, 20, 21, 22, 23, 24, 25, 26, 28, 29, 30, 31, 32, 33, 34, 36, 37, 38, 40, 43, 44, 46, 47, 48, 49, 50]},\n{\"kind\": \"finding\", \"severity\": \"malicious\", \"text\": \"A new user `support` was added to the sudo group without a password, and then used to run the `cat /etc/shadow` command.\", \"lines\": [36, 45, 44]},\n{\"kind\": \"action\", \"severity\": \"info\", \"text\": \"Review the `cat /etc/shadow` command run by `support`.\", \"lines\": [44]},\n{\"kind\": \"action\", \"severity\": \"info\", \"text\": \"Verify that the new user `support` has a valid password.\", \"lines\": [37]},\n{\"kind\": \"action\", \"severity\": \"info\", \"text\": \"Check the sudo group permissions to ensure that only authorized users can run commands.\", \"lines\": [36, 34]},\n{\"kind\": \"action\", \"severity\": \"info\", \"text\": \"Monitor the system for any further suspicious activity.\", \"lines\": [47, 46, 48, 49, 50]}\n]}",
+  "prompt_version": "v2"
+}

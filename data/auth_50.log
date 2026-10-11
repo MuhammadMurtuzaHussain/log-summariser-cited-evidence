@@ -1,0 +1,50 @@
+Oct  7 06:58:12 web01 sshd[1180]: Accepted publickey for alice from 10.0.4.21 port 52114 ssh2: RSA SHA256:Zx3kQ9vN1mQ0b2yH7fT4cL8dRwUe5aGjIoPpVnXs6Yk
+Oct  7 06:58:12 web01 sshd[1180]: pam_unix(sshd:session): session opened for user alice(uid=1001) by (uid=0)
+Oct  7 07:02:40 web01 sudo:    alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/usr/bin/apt update
+Oct  7 07:02:40 web01 sudo: pam_unix(sudo:session): session opened for user root(uid=0) by alice(uid=1001)
+Oct  7 07:02:52 web01 sudo: pam_unix(sudo:session): session closed for user root
+Oct  7 07:15:03 web01 CRON[1302]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Oct  7 07:15:03 web01 CRON[1302]: pam_unix(cron:session): session closed for user root
+Oct  7 07:31:47 web01 sshd[1344]: Failed password for bob from 10.0.4.35 port 50221 ssh2
+Oct  7 07:31:55 web01 sshd[1344]: Accepted password for bob from 10.0.4.35 port 50221 ssh2
+Oct  7 07:31:55 web01 sshd[1344]: pam_unix(sshd:session): session opened for user bob(uid=1002) by (uid=0)
+Oct  7 09:12:30 web01 sshd[1180]: pam_unix(sshd:session): session closed for user alice
+Oct  7 11:20:05 web01 sshd[1921]: Invalid user ubuntu from 198.51.100.23 port 60112
+Oct  7 11:20:07 web01 sshd[1921]: Failed password for invalid user ubuntu from 198.51.100.23 port 60112 ssh2
+Oct  7 11:20:09 web01 sshd[1921]: Connection closed by invalid user ubuntu 198.51.100.23 port 60112 [preauth]
+Oct  7 12:47:51 web01 sshd[2044]: Invalid user pi from 198.51.100.23 port 60390
+Oct  7 12:47:53 web01 sshd[2044]: Failed password for invalid user pi from 198.51.100.23 port 60390 ssh2
+Oct  7 13:41:09 web01 sshd[2201]: Invalid user admin from 203.0.113.45 port 41022
+Oct  7 13:41:11 web01 sshd[2201]: Failed password for invalid user admin from 203.0.113.45 port 41022 ssh2
+Oct  7 13:41:14 web01 sshd[2203]: Invalid user test from 203.0.113.45 port 41030
+Oct  7 13:41:16 web01 sshd[2203]: Failed password for invalid user test from 203.0.113.45 port 41030 ssh2
+Oct  7 13:41:19 web01 sshd[2205]: Invalid user oracle from 203.0.113.45 port 41038
+Oct  7 13:41:21 web01 sshd[2205]: Failed password for invalid user oracle from 203.0.113.45 port 41038 ssh2
+Oct  7 13:41:25 web01 sshd[2207]: Failed password for root from 203.0.113.45 port 41046 ssh2
+Oct  7 13:41:28 web01 sshd[2207]: Failed password for root from 203.0.113.45 port 41046 ssh2
+Oct  7 13:41:31 web01 sshd[2207]: Failed password for root from 203.0.113.45 port 41046 ssh2
+Oct  7 13:41:34 web01 sshd[2207]: Failed password for root from 203.0.113.45 port 41046 ssh2
+Oct  7 13:41:34 web01 sshd[2207]: error: maximum authentication attempts exceeded for root from 203.0.113.45 port 41046 ssh2 [preauth]
+Oct  7 13:41:34 web01 sshd[2207]: Disconnecting authenticating user root 203.0.113.45 port 41046: Too many authentication failures [preauth]
+Oct  7 13:43:02 web01 sshd[2219]: Failed password for deploy from 203.0.113.45 port 41102 ssh2
+Oct  7 13:43:06 web01 sshd[2219]: Failed password for deploy from 203.0.113.45 port 41102 ssh2
+Oct  7 13:43:11 web01 sshd[2219]: Accepted password for deploy from 203.0.113.45 port 41102 ssh2
+Oct  7 13:43:11 web01 sshd[2219]: pam_unix(sshd:session): session opened for user deploy(uid=1003) by (uid=0)
+Oct  7 13:44:20 web01 sudo:    deploy : TTY=pts/1 ; PWD=/home/deploy ; USER=root ; COMMAND=/bin/bash
+Oct  7 13:44:20 web01 sudo: pam_unix(sudo:session): session opened for user root(uid=0) by deploy(uid=1003)
+Oct  7 13:44:51 web01 useradd[2250]: new user: name=support, UID=1004, GID=1004, home=/home/support, shell=/bin/bash
+Oct  7 13:44:58 web01 usermod[2257]: add 'support' to group 'sudo'
+Oct  7 13:45:06 web01 passwd[2260]: pam_unix(passwd:chauthtok): password changed for support
+Oct  7 13:46:30 web01 sudo: pam_unix(sudo:session): session closed for user root
+Oct  7 13:46:44 web01 sshd[2219]: Received disconnect from 203.0.113.45 port 41102:11: disconnected by user
+Oct  7 13:46:44 web01 sshd[2219]: Disconnected from user deploy 203.0.113.45 port 41102
+Oct  7 13:46:44 web01 sshd[2219]: pam_unix(sshd:session): session closed for user deploy
+Oct  7 14:02:17 web01 sshd[2301]: Accepted password for support from 203.0.113.45 port 52871 ssh2
+Oct  7 14:02:17 web01 sshd[2301]: pam_unix(sshd:session): session opened for user support(uid=1004) by (uid=0)
+Oct  7 14:02:49 web01 sudo:    support : TTY=pts/2 ; PWD=/home/support ; USER=root ; COMMAND=/usr/bin/cat /etc/shadow
+Oct  7 14:02:49 web01 sudo: pam_unix(sudo:session): session opened for user root(uid=0) by support(uid=1004)
+Oct  7 14:10:03 web01 CRON[2377]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Oct  7 14:10:03 web01 CRON[2377]: pam_unix(cron:session): session closed for user root
+Oct  7 14:31:12 web01 sshd[2402]: Accepted publickey for alice from 10.0.4.21 port 53340 ssh2: RSA SHA256:q7LmT2xW0cVbN8aS5dFgH1jKzXeR4yUiOpAsDfGhJk0
+Oct  7 14:31:12 web01 sshd[2402]: pam_unix(sshd:session): session opened for user alice(uid=1001) by (uid=0)
+Oct  7 14:33:40 web01 sudo:    alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/usr/bin/journalctl -u ssh

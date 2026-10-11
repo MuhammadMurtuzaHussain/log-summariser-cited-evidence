@@ -1,0 +1,153 @@
+{
+  "schema": 1,
+  "id": "20261009-142852-llama3.2",
+  "label": "llama3.2",
+  "source": "ollama",
+  "model": "llama3.2",
+  "created": "2026-10-09T14:28:52+00:00",
+  "elapsed_s": 14.1,
+  "options": {
+    "temperature": 0.0,
+    "seed": 7,
+    "num_ctx": 8192
+  },
+  "log": {
+    "name": "auth_50.log",
+    "sha256": "06af8e79dffc6253de866960760e86fa36f449b3ee1b0a756ad91cc225ddb9be",
+    "lines": 50
+  },
+  "prompt_sha256": "dbb8ec7a496b0401e714d55518fd758be01042aa76a640754bab757b590bb984",
+  "parse_error": null,
+  "claims": [
+    {
+      "id": "C1",
+      "kind": "headline",
+      "severity": "info",
+      "text": "Authentication activity on web01",
+      "lines": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ]
+    },
+    {
+      "id": "C2",
+      "kind": "finding",
+      "severity": "suspicious",
+      "text": "Multiple failed SSH login attempts from unknown users",
+      "lines": [
+        17,
+        20,
+        23,
+        24,
+        25,
+        26,
+        27,
+        29,
+        30,
+        31
+      ]
+    },
+    {
+      "id": "C3",
+      "kind": "finding",
+      "severity": "suspicious",
+      "text": "New user support created with root privileges",
+      "lines": [
+        35,
+        36,
+        37,
+        38,
+        39,
+        42,
+        44,
+        45
+      ]
+    },
+    {
+      "id": "C4",
+      "kind": "action",
+      "severity": "info",
+      "text": "Monitor SSH login activity for suspicious patterns",
+      "lines": [
+        17,
+        20,
+        23,
+        24,
+        25,
+        26,
+        27,
+        29,
+        30,
+        31
+      ]
+    },
+    {
+      "id": "C5",
+      "kind": "action",
+      "severity": "info",
+      "text": "Verify user support's privileges and access",
+      "lines": [
+        35,
+        36,
+        37,
+        38,
+        39,
+        42,
+        44,
+        45
+      ]
+    },
+    {
+      "id": "C6",
+      "kind": "action",
+      "severity": "info",
+      "text": "Review journalctl logs for potential security issues",
+      "lines": [
+        50
+      ]
+    },
+    {
+      "id": "C7",
+      "kind": "action",
+      "severity": "info",
+      "text": "Implement additional authentication measures for new users",
+      "lines": [
+        42,
+        44,
+        45
+      ]
+    },
+    {
+      "id": "C8",
+      "kind": "action",
+      "severity": "info",
+      "text": "Regularly review and update user privileges and access",
+      "lines": [
+        35,
+        36,
+        37,
+        38,
+        39,
+        42,
+        44,
+        45
+      ]
+    }
+  ],
+  "raw_response": "{\"claims\": [\n  {\"kind\": \"headline\", \"severity\": \"info\", \"text\": \"Authentication activity on web01\", \"lines\": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]},\n  {\"kind\": \"finding\", \"severity\": \"suspicious\", \"text\": \"Multiple failed SSH login attempts from unknown users\", \"lines\": [17, 20, 23, 24, 25, 26, 27, 29, 30, 31]},\n  {\"kind\": \"finding\", \"severity\": \"suspicious\", \"text\": \"New user support created with root privileges\", \"lines\": [35, 36, 37, 38, 39, 42, 44, 45]},\n  {\"kind\": \"action\", \"severity\": \"info\", \"text\": \"Monitor SSH login activity for suspicious patterns\", \"lines\": [17, 20, 23, 24, 25, 26, 27, 29, 30, 31]},\n  {\"kind\": \"action\", \"severity\": \"info\", \"text\": \"Verify user support's privileges and access\", \"lines\": [35, 36, 37, 38, 39, 42, 44, 45]},\n  {\"kind\": \"action\", \"severity\": \"info\", \"text\": \"Review journalctl logs for potential security issues\", \"lines\": [50]},\n  {\"kind\": \"action\", \"severity\": \"info\", \"text\": \"Implement additional authentication measures for new users\", \"lines\": [42, 44, 45]},\n  {\"kind\": \"action\", \"severity\": \"info\", \"text\": \"Regularly review and update user privileges and access\", \"lines\": [35, 36, 37, 38, 39, 42, 44, 45]}\n]}"
+}
